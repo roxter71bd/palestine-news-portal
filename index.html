@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফিলিস্তিন নিউজ - স্বাধীনতা সংগ্রামের আধুনিক সংবাদ পোর্টাল</title>
+    <meta name="description" content="ফিলিস্তিনের স্বাধীনতা সংগ্রামের সর্বশেষ খবর, বিশ্লেষণ, ভিডিও ও বিশেষ প্রতিবেদন">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇵🇸</text></svg>">
+    <style>
+        :root {
+            --bbc-red: #BB1919;
+            --bbc-dark-red: #990000;
+            --bbc-black: #121212;
+            --bbc-dark-gray: #1A1A1A;
+            --bbc-gray: #333333;
+            --bbc-light-gray: #4A4A4A;
+            --bbc-white: #FFFFFF;
+            --bbc-off-white: #F6F6F6;
+            --palestine-green: #006400;
+            --palestine-red: #CE1126;
+            --accent-blue: #1E6FA9;
+            --accent-yellow: #FFC107;
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 8px;
+            --container-width: 1300px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans Bengali', 'Roboto', sans-serif;
+            background-color: var(--bbc-off-white);
+            color: var(--bbc-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* BBC-Style Header */
+        .bbc-header {
+            background-color: var(--bbc-black);
+            color: var(--bbc-white);
+            border-bottom: 4px solid var(--bbc-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-top {
+            background-color: var(--bbc-dark-gray);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--bbc-gray);
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .date-time {
+            font-size: 0.9rem;
+            color: #AAAAAA;
+        }
+        
+        .header-auth {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .auth-btn {
+            background: transparent;
+            border: 1px solid var(--bbc-light-gray);
+            color: var(--bbc-white);
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .auth-btn:hover {
+            background-color: var(--bbc-red);
+            border-color: var(--bbc-red);
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--bbc-red) 0%, var(--palestine-red) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-icon::before {
+            content: '🇵🇸';
+            font-size: 30px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--bbc-white);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: #CCCCCC;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .breaking-news {
+            background-color: var(--bbc-red);
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* BBC Navigation */
+        .bbc-nav {
+            background-color: var(--bbc-dark-gray);
+            border-top: 1px solid var(--bbc-gray);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav a {
+            color: var(--bbc-white);
+            text-decoration: none;
+            padding: 18px 20px;
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border-right: 1px solid var(--bbc-gray);
+        }
+        
+        .main-nav a:hover {
+            background-color: var(--bbc-red);
+        }
+        
+        .main-nav a i {
+            margin-right: 8px;
+        }
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            background-color: var(--bbc-gray);
+            border: 1px solid var(--bbc-light-gray);
+            color: var(--bbc-white);
+            padding: 10px 15px;
+            padding-right: 40px;
+            border-radius: 4px;
+            width: 200px;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            width: 300px;
+            outline: none;
+            border-color: var(--bbc-red);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #AAAAAA;
+            cursor: pointer;
+        }
+        
+        /* Hero Section - BBC Style */
+        .bbc-hero {
+            padding: 40px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--bbc-white);
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Main Grid Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* News Categories */
+        .news-categories {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: thin;
+        }
+        
+        .category-btn {
+            background: transparent;
+            border: 2px solid var(--bbc-red);
+            color: var(--bbc-red);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .category-btn.active,
+        .category-btn:hover {
+            background-color: var(--bbc-red);
+            color: white;
+        }
+        
+        /* Featured News */
+        .featured-news {
+            margin-bottom: 50px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--bbc-red);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--bbc-black);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--bbc-red);
+        }
+        
+        .view-all {
+            color: var(--bbc-red);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .view-all:hover {
+            text-decoration: underline;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .main-feature {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+        
+        .main-feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .main-feature:hover .feature-image {
+            transform: scale(1.05);
+        }
+        
+        .feature-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: white;
+            padding: 30px;
+        }
+        
+        .feature-tag {
+            display: inline-block;
+            background-color: var(--bbc-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .feature-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .secondary-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .secondary-feature {
+            display: flex;
+            gap: 15px;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .secondary-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .secondary-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .secondary-content {
+            padding: 15px;
+            flex: 1;
+        }
+        
+        .secondary-tag {
+            color: var(--bbc-red);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .secondary-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        
+        /* News Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-tag {
+            color: var(--bbc-red);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .news-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            flex: 1;
+        }
+        
+        .news-excerpt {
+            color: var(--bbc-light-gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: var(--bbc-light-gray);
+        }
+        
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+        
+        .sidebar-widget {
+            margin-bottom: 40px;
+        }
+        
+        .widget-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bbc-red);
+            color: var(--bbc-black);
+        }
+        
+        /* Live Feed */
+        .live-feed {
+            background-color: var(--bbc-off-white);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .live-item {
+            padding: 15px;
+            border-bottom: 1px solid #EEE;
+            transition: var(--transition);
+        }
+        
+        .live-item:hover {
+            background-color: #F9F9F9;
+        }
+        
+        .live-time {
+            color: var(--bbc-red);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .live-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Trending News */
+        .trending-list {
+            list-style: none;
+        }
+        
+        .trending-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #EEE;
+        }
+        
+        .trending-number {
+            background-color: var(--bbc-red);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        
+        .trending-title {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        
+        /* Auth Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-header {
+            background-color: var(--bbc-red);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .close-modal {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .form-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #EEE;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            background: transparent;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--bbc-light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--bbc-red);
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--bbc-red);
+        }
+        
+        .form-content {
+            display: none;
+        }
+        
+        .form-content.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--bbc-gray);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--bbc-red);
+            box-shadow: 0 0 0 3px rgba(187, 25, 25, 0.1);
+        }
+        
+        .modal-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--bbc-red);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+        
+        .modal-submit:hover {
+            background-color: var(--bbc-dark-red);
+        }
+        
+        /* Create News Modal */
+        .create-news-modal .modal-content {
+            max-width: 800px;
+        }
+        
+        .editor-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+            background-color: var(--bbc-off-white);
+            border-bottom: 1px solid #DDD;
+        }
+        
+        .editor-btn {
+            padding: 8px 12px;
+            background: white;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .editor-btn:hover {
+            background-color: #F0F0F0;
+        }
+        
+        .editor-content {
+            min-height: 300px;
+            padding: 20px;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .image-upload-area {
+            border: 2px dashed #DDD;
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .image-upload-area:hover {
+            border-color: var(--bbc-red);
+            background-color: #FFF5F5;
+        }
+        
+        .image-upload-area i {
+            font-size: 3rem;
+            color: #DDD;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        .bbc-footer {
+            background-color: var(--bbc-black);
+            color: var(--bbc-white);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--bbc-white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--bbc-red);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #CCCCCC;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--bbc-red);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--bbc-gray);
+            padding-top: 30px;
+            text-align: center;
+            color: #999999;
+            font-size: 0.9rem;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--bbc-red);
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 3000;
+            display: none;
+            animation: slideInRight 0.5s ease;
+            max-width: 400px;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #F3F3F3;
+            border-top: 5px solid var(--bbc-red);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .main-nav a {
+                padding: 15px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                display: none;
+            }
+            
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-nav a {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .search-box input {
+                width: 150px;
+            }
+            
+            .search-box input:focus {
+                width: 200px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--bbc-red);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--bbc-dark-red);
+        }
+    </style>
+</head>
+<body>
+    <!-- BBC-Style Header -->
+    <header class="bbc-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="date-time" id="currentDateTime">
+                    <!-- JavaScript will update this -->
+                </div>
+                <div class="header-auth">
+                    <button class="auth-btn" id="loginBtn">লগইন</button>
+                    <button class="auth-btn" id="signupBtn">সাইন আপ</button>
+                    <button class="auth-btn" id="createNewsBtn">সংবাদ প্রকাশ</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="logo-area">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"></div>
+                        <div class="logo-text">
+                            <h1>ফিলিস্তিন নিউজ</h1>
+                            <div class="logo-tagline">স্বাধীনতা সংগ্রামের আধুনিক সংবাদ পোর্টাল</div>
+                        </div>
+                    </a>
+                    <div class="breaking-news">
+                        <i class="fas fa-bullhorn"></i>
+                        <span id="breakingNewsText">গাজার হাসপাতালে ইসরাইলি হামলা, ৫০ জন নিহত</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="bbc-nav">
+            <div class="container nav-container">
+                <ul class="main-nav">
+                    <li><a href="#"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> সর্বশেষ</a></li>
+                    <li><a href="#"><i class="fas fa-video"></i> ভিডিও</a></li>
+                    <li><a href="#"><i class="fas fa-microphone-alt"></i> বিশেষ প্রতিবেদন</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> বিশ্লেষণ</a></li>
+                    <li><a href="#"><i class="fas fa-globe-asia"></i> আন্তর্জাতিক</a></li>
+                    <li><a href="#"><i class="fas fa-camera"></i> ফটো গ্যালারি</a></li>
+                    <li><a href="#"><i class="fas fa-podcast"></i> পডকাস্ট</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="খবর খুঁজুন...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bbc-hero">
+        <div class="container hero-content">
+            <h1>ফিলিস্তিনের মুক্তি সংগ্রাম: <br>একটি জাতির অধিকার প্রতিষ্ঠার লড়াই</h1>
+            <p>সর্বশেষ খবর, বিশেষ প্রতিবেদন, ভিডিও এবং বিশ্লেষণ পেতে আমাদের সাথেই থাকুন</p>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+                <button class="auth-btn" style="background-color: var(--bbc-red); border: none; padding: 12px 30px;">সাবস্ক্রাইব করুন</button>
+                <button class="auth-btn" style="background-color: transparent; border: 2px solid white;">লাইভ টিভি</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- News Categories -->
+        <div class="news-categories">
+            <button class="category-btn active">সর্বশেষ</button>
+            <button class="category-btn">গাজা সংকট</button>
+            <button class="category-btn">পশ্চিম তীর</button>
+            <button class="category-btn">ইসলামি ঐক্য</button>
+            <button class="category-btn">আন্তর্জাতিক প্রতিক্রিয়া</button>
+            <button class="category-btn">মানবিক সহায়তা</button>
+            <button class="category-btn">অর্থনৈতিক অবরোধ</button>
+            <button class="category-btn">শরণার্থী সমস্যা</button>
+        </div>
+
+        <div class="main-grid">
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Featured News -->
+                <section class="featured-news">
+                    <div class="section-header">
+                        <h2 class="section-title"><i class="fas fa-star"></i> শীর্ষ সংবাদ</h2>
+                        <a href="#" class="view-all">সব দেখুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="featured-grid">
+                        <div class="main-feature">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="গাজার হামলা" class="feature-image">
+                            <div class="feature-overlay">
+                                <span class="feature-tag">বিশেষ প্রতিবেদন</span>
+                                <h3 class="feature-title">গাজার শিশু হাসপাতালে ইসরাইলি হামলা: আন্তর্জাতিক আইন লঙ্ঘনের নতুন মাত্রা</h3>
+                                <div class="feature-meta">
+                                    <span><i class="far fa-clock"></i> ২ ঘণ্টা আগে</span>
+                                    <span><i class="far fa-eye"></i> ১৫,৪২৩ বার দেখা</span>
+                                    <span><i class="far fa-comment"></i> ৩৪২ মন্তব্য</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="secondary-features">
+                            <div class="secondary-feature">
+                                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="প্রতিবাদ" class="secondary-image">
+                                <div class="secondary-content">
+                                    <div class="secondary-tag">আন্তর্জাতিক</div>
+                                    <h4 class="secondary-title">জাতিসংঘে ফিলিস্তিন রাষ্ট্রের সদস্যপদ চুক্তি নিয়ে আলোচনা</h4>
+                                    <div class="news-meta">
+                                        <span>২ ঘণ্টা আগে</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="secondary-feature">
+                                <img src="https://images.unsplash.com/photo-1580913428021-6dbb6d2e1f3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="শরণার্থী" class="secondary-image">
+                                <div class="secondary-content">
+                                    <div class="secondary-tag">মানবিক সংকট</div>
+                                    <h4 class="secondary-title">গাজার ৮০% জনগণ মানবিক সহায়তার উপর নির্ভরশীল</h4>
+                                    <div class="news-meta">
+                                        <span>৫ ঘণ্টা আগে</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="secondary-feature">
+                                <img src="https://images.unsplash.com/photo-1516549655669-df6654e44780?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="চিকিৎসা" class="secondary-image">
+                                <div class="secondary-content">
+                                    <div class="secondary-tag">স্বাস্থ্য</div>
+                                    <h4 class="secondary-title">অবরুদ্ধ গাজায় ক্যান্সার রোগীদের জন্য ওষুধ সরবরাহ বন্ধ</h4>
+                                    <div class="news-meta">
+                                        <span>৮ ঘণ্টা আগে</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- News Grid -->
+                <section class="news-section">
+                    <div class="section-header">
+                        <h2 class="section-title"><i class="fas fa-newspaper"></i> সর্বশেষ সংবাদ</h2>
+                        <a href="#" class="view-all">সব সংবাদ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="news-grid" id="newsContainer">
+                        <!-- News cards will be loaded here -->
+                    </div>
+                </section>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Live Feed Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-broadcast-tower"></i> লাইভ আপডেট</h3>
+                    <div class="live-feed" id="liveFeed">
+                        <!-- Live updates will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Trending Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-chart-line"></i> ট্রেন্ডিং</h3>
+                    <ul class="trending-list">
+                        <li class="trending-item">
+                            <div class="trending-number">১</div>
+                            <div class="trending-title">ইসরাইলি বন্দুকধারীদের হাতে নিহত ফিলিস্তিনি কিশোর</div>
+                        </li>
+                        <li class="trending-item">
+                            <div class="trending-number">২</div>
+                            <div class="trending-title">পশ্চিম তীরে নতুন ইহুদি বসতি স্থাপনের পরিকল্পনা</div>
+                        </li>
+                        <li class="trending-item">
+                            <div class="trending-number">৩</div>
+                            <div class="trending-title">মিসরের মধ্যস্থতা: নতুন যুদ্ধবিরতি আলোচনা</div>
+                        </li>
+                        <li class="trending-item">
+                            <div class="trending-number">৪</div>
+                            <div class="trending-title">ফিলিস্তিনি শরণার্থীদের জন্য তুরস্কের নতুন সহায়তা</div>
+                        </li>
+                        <li class="trending-item">
+                            <div class="trending-number">৫</div>
+                            <div class="trending-title">আন্তর্জাতিক অপরাধ আদালতে ইসরাইলের বিচারের দাবি</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- User Profile Widget -->
+                <div class="sidebar-widget" id="userWidget" style="display: none;">
+                    <h3 class="widget-title"><i class="fas fa-user-circle"></i> আপনার অ্যাকাউন্ট</h3>
+                    <div id="userProfileInfo">
+                        <!-- User info will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Advertisement/Info Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-info-circle"></i> জরুরি তথ্য</h3>
+                    <div style="background-color: #FFF3CD; border-left: 4px solid #FFC107; padding: 15px; border-radius: 4px;">
+                        <p style="font-size: 0.9rem; margin-bottom: 10px; font-weight: 600;">সত্যতা যাচাই করুন</p>
+                        <p style="font-size: 0.85rem; color: var(--bbc-gray);">প্রকাশিত যে কোনো খবরের সত্যতা আমাদের ফ্যাক্ট-চেক টিম যাচাই করে। সন্দেহজনক খবর দেখলে <a href="#" style="color: var(--bbc-red);">রিপোর্ট করুন</a>।</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bbc-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>ফিলিস্তিন নিউজ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">সম্পর্কে</a></li>
+                        <li><a href="#">ক্যারিয়ার</a></li>
+                        <li><a href="#">যোগাযোগ</a></li>
+                        <li><a href="#">গোপনীয়তা নীতি</a></li>
+                        <li><a href="#">শর্তাবলী</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>সেবাসমূহ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">আমাদের অ্যাপ</a></li>
+                        <li><a href="#">নিউজলেটার</a></li>
+                        <li><a href="#">পডকাস্ট</a></li>
+                        <li><a href="#">লাইভ টিভি</a></li>
+                        <li><a href="#">আর্কাইভ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>আমাদের সাথে থাকুন</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i> ফেসবুক</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> টুইটার</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> ইউটিউব</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> ইনস্টাগ্রাম</a></li>
+                        <li><a href="#"><i class="fab fa-telegram"></i> টেলিগ্রাম</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>গুরুত্বপূর্ণ লিংক</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">জাতিসংঘ রিপোর্ট</a></li>
+                        <li><a href="#">হিউম্যান রাইটস ওয়াচ</a></li>
+                        <li><a href="#">আন্তর্জাতিক আইন</a></li>
+                        <li><a href="#">সাহায্য সংস্থা</a></li>
+                        <li><a href="#">দূতাবাস তথ্য</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© ২০২৩ ফিলিস্তিন নিউজ। সকল অধিকার সংরক্ষিত। এই পোর্টালটি একটি স্বাধীন মিডিয়া উদ্যোগ।</p>
+                <p style="margin-top: 10px;">GitHub হোস্টেড - সম্পূর্ণ ওপেন সোর্স প্ল্যাটফর্ম</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>ফিলিস্তিন নিউজ অ্যাকাউন্ট</h3>
+                <button class="close-modal" id="closeAuthModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-tabs">
+                    <button class="tab-btn active" data-tab="login">লগইন</button>
+                    <button class="tab-btn" data-tab="signup">সাইন আপ</button>
+                </div>
+                
+                <div class="form-content active" id="loginForm">
+                    <form id="loginFormData">
+                        <div class="form-group">
+                            <label class="form-label">ইমেইল ঠিকানা</label>
+                            <input type="email" class="form-input" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">পাসওয়ার্ড</label>
+                            <input type="password" class="form-input" placeholder="আপনার পাসওয়ার্ড" required>
+                        </div>
+                        <button type="submit" class="modal-submit">লগইন করুন</button>
+                    </form>
+                </div>
+                
+                <div class="form-content" id="signupForm">
+                    <form id="signupFormData">
+                        <div class="form-group">
+                            <label class="form-label">পূর্ণ নাম</label>
+                            <input type="text" class="form-input" placeholder="আপনার পূর্ণ নাম" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ইমেইল ঠিকানা</label>
+                            <input type="email" class="form-input" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">পাসওয়ার্ড</label>
+                            <input type="password" class="form-input" placeholder="শক্তিশালী পাসওয়ার্ড তৈরি করুন" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">পাসওয়ার্ড নিশ্চিত করুন</label>
+                            <input type="password" class="form-input" placeholder="পুনরায় পাসওয়ার্ড দিন" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ব্যবহারকারীর ধরন</label>
+                            <select class="form-input" required>
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="reader">পাঠক</option>
+                                <option value="reporter">সংবাদদাতা</option>
+                                <option value="journalist">সাংবাদিক</option>
+                                <option value="activist">কর্মী</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="modal-submit">অ্যাকাউন্ট তৈরি করুন</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create News Modal -->
+    <div class="modal create-news-modal" id="createNewsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> নতুন সংবাদ প্রকাশ</h3>
+                <button class="close-modal" id="closeNewsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="newsForm">
+                    <div class="form-group">
+                        <label class="form-label">সংবাদ শিরোনাম</label>
+                        <input type="text" class="form-input" id="newsTitle" placeholder="সংবাদের শিরোনাম লিখুন" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">সংবাদ বিভাগ</label>
+                        <select class="form-input" id="newsCategory" required>
+                            <option value="">বিভাগ নির্বাচন করুন</option>
+                            <option value="latest">সর্বশেষ</option>
+                            <option value="gaza">গাজা সংকট</option>
+                            <option value="west-bank">পশ্চিম তীর</option>
+                            <option value="international">আন্তর্জাতিক</option>
+                            <option value="analysis">বিশ্লেষণ</option>
+                            <option value="humanitarian">মানবিক</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">ছবি লিংক</label>
+                        <input type="text" class="form-input" id="newsImage" placeholder="ছবির লিংক দিন (URL)" required>
+                        <small style="color: #666; font-size: 0.85rem;">আপনি একাধিক লিংক কমা দিয়ে দিতে পারেন</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">সংবাদ বিস্তারিত</label>
+                        <div class="editor-toolbar">
+                            <button type="button" class="editor-btn" data-command="bold"><i class="fas fa-bold"></i></button>
+                            <button type="button" class="editor-btn" data-command="italic"><i class="fas fa-italic"></i></button>
+                            <button type="button" class="editor-btn" data-command="underline"><i class="fas fa-underline"></i></button>
+                            <button type="button" class="editor-btn" data-command="insertunorderedlist"><i class="fas fa-list-ul"></i></button>
+                            <button type="button" class="editor-btn" data-command="insertorderedlist"><i class="fas fa-list-ol"></i></button>
+                            <button type="button" class="editor-btn" data-command="createLink"><i class="fas fa-link"></i></button>
+                        </div>
+                        <div class="editor-content" id="newsContent" contenteditable="true" placeholder="আপনার সংবাদ বিস্তারিত লিখুন..."></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">ট্যাগ (কমা দিয়ে আলাদা করুন)</label>
+                        <input type="text" class="form-input" id="newsTags" placeholder="ফিলিস্তিন, গাজা, মানবাধিকার, ইত্যাদি">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">সূত্র (যদি থাকে)</label>
+                        <input type="text" class="form-input" id="newsSource" placeholder="সূত্রের নাম বা লিংক">
+                    </div>
+                    
+                    <div class="form-group" style="display: flex; gap: 15px;">
+                        <label style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="newsBreaking"> জরুরি সংবাদ
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="newsVerified"> তথ্য যাচাইকৃত
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="modal-submit">
+                        <i class="fas fa-paper-plane"></i> সংবাদ প্রকাশ করুন
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notificationText">আপনার সংবাদ সফলভাবে প্রকাশিত হয়েছে!</span>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content" style="background: transparent; box-shadow: none; width: auto;">
+            <div class="loading">
+                <div class="loader"></div>
+                <p style="color: white;">লোড হচ্ছে...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // BBC-Style News Portal Application
+        class PalestineNews {
+            constructor() {
+                this.currentUser = null;
+                this.news = [];
+                this.liveUpdates = [];
+                this.init();
+            }
+            
+            init() {
+                this.setupDateTime();
+                this.loadData();
+                this.setupEventListeners();
+                this.renderNews();
+                this.renderLiveUpdates();
+                this.checkAuth();
+            }
+            
+            setupDateTime() {
+                const updateDateTime = () => {
+                    const now = new Date();
+                    const options = { 
+                        weekday: 'long', 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                    };
+                    document.getElementById('currentDateTime').textContent = 
+                        now.toLocaleDateString('bn-BD', options);
+                };
+                updateDateTime();
+                setInterval(updateDateTime, 1000);
+            }
+            
+            loadData() {
+                // Load from localStorage or use demo data
+                const savedNews = localStorage.getItem('palestine_news');
+                const savedUser = localStorage.getItem('palestine_user');
+                const savedLive = localStorage.getItem('palestine_live');
+                
+                this.news = savedNews ? JSON.parse(savedNews) : this.getDemoNews();
+                this.liveUpdates = savedLive ? JSON.parse(savedLive) : this.getDemoLiveUpdates();
+                
+                if (savedUser) {
+                    this.currentUser = JSON.parse(savedUser);
+                }
+                
+                // Initialize if empty
+                if (!savedNews) this.saveNews();
+                if (!savedLive) this.saveLiveUpdates();
+            }
+            
+            getDemoNews() {
+                return [
+                    {
+                        id: 1,
+                        title: "ইসরাইলি সৈন্যদের হাতে পশ্চিম তীরে আরও ৩ ফিলিস্তিনি নিহত",
+                        excerpt: "পশ্চিম তীরের জেনিন শহরে ইসরাইলি সৈন্যদের গুলিতে তিন ফিলিস্তিনি যুবক নিহত হয়েছেন। স্থানীয় সূত্রে জানা যায়, ইসরাইলি বাহিনী অভিযান চালানোর সময় তাদের লক্ষ্য করে গুলি চালায়।",
+                        category: "latest",
+                        image: "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                        tags: ["পশ্চিম তীর", "জেনিন", "ইসরাইলি হামলা"],
+                        date: "২০২৩-১০-২৫",
+                        time: "১২:৪৫ PM",
+                        views: 12543,
+                        comments: 234,
+                        author: "আহমেদ রহমান",
+                        verified: true,
+                        breaking: false
+                    },
+                    {
+                        id: 2,
+                        title: "গাজায় ১২ ঘণ্টার যুদ্ধবিরতি: মানবিক সহায়তা প্রবেশের সুযোগ",
+                        excerpt: "মিসরের মধ্যস্থতায় গাজায় ১২ ঘণ্টার যুদ্ধবিরতি ঘোষণা করা হয়েছে। এই সময়ে মানবিক সহায়তা ও জরুরি চিকিৎসা সরঞ্জাম প্রবেশ করানো হবে বলে জানা গেছে।",
+                        category: "gaza",
+                        image: "https://images.unsplash.com/photo-1580913428021-6dbb6d2e1f3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                        tags: ["গাজা", "যুদ্ধবিরতি", "মানবিক সহায়তা"],
+                        date: "২০২৩-১০-২৫",
+                        time: "১০:৩০ AM",
+                        views: 18976,
+                        comments: 421,
+                        author: "ফাতেমা বেগম",
+                        verified: true,
+                        breaking: true
+                    },
+                    {
+                        id: 3,
+                        title: "আন্তর্জাতিক আদালতে ইসরাইলের বিরুদ্ধে গণহত্যার মামলা দায়ের",
+                        excerpt: "দক্ষিণ আফ্রিকা আন্তর্জাতিক আদালতে ইসরাইলের বিরুদ্ধে গণহত্যার মামলা দায়ের করেছে। মামলায় গাজায় বেসামরিক জনগণের উপর হামলাকে গণহত্যা হিসেবে অভিযুক্ত করা হয়েছে।",
+                        category: "international",
+                        image: "https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                        tags: ["আন্তর্জাতিক আদালত", "গণহত্যা", "দক্ষিণ আফ্রিকা"],
+                        date: "২০২৩-১০-২৪",
+                        time: "৪:১৫ PM",
+                        views: 23456,
+                        comments: 567,
+                        author: "ড. রহমত উল্লাহ",
+                        verified: true,
+                        breaking: false
+                    },
+                    {
+                        id: 4,
+                        title: "ফিলিস্তিনি শিশুদের মানসিক স্বাস্থ্য সংকট: সমীক্ষা প্রতিবেদন",
+                        excerpt: "এক নতুন সমীক্ষায় দেখা গেছে, গাজার ৮৫% শিশু ট্রমা ও মানসিক স্বাস্থ্য সমস্যায় ভুগছে। অবিরাম হামলা ও সহিংসতা শিশুদের উপর দীর্ঘমেয়াদী প্রভাব ফেলছে বলে বিশেষজ্ঞরা সতর্ক করেছেন।",
+                        category: "humanitarian",
+                        image: "https://images.unsplash.com/photo-1516549655669-df6654e44780?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                        tags: ["শিশু", "মানসিক স্বাস্থ্য", "ট্রমা"],
+                        date: "২০২৩-১০-২৪",
+                        time: "২:২০ PM",
+                        views: 9876,
+                        comments: 189,
+                        author: "ড. সুমাইয়া আহমেদ",
+                        verified: true,
+                        breaking: false
+                    },
+                    {
+                        id: 5,
+                        title: "ইসরাইলি বসতি সম্প্রসারণ: নতুন ৩,০০০ ঘর নির্মাণের অনুমোদন",
+                        excerpt: "ইসরাইলি সরকার পশ্চিম তীরে নতুন করে ৩,০০০ বসতি ইউনিট নির্মাণের অনুমোদন দিয়েছে। আন্তর্জাতিক সম্প্রদায়ের নিন্দা সত্ত্বেও বসতি সম্প্রসারণ অব্যাহত রয়েছে।",
+                        category: "west-bank",
+                        image: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                        tags: ["বসতি", "পশ্চিম তীর", "আন্তর্জাতিক আইন"],
+                        date: "২০২৩-১০-২৩",
+                        time: "১১:১০ AM",
+                        views: 15432,
+                        comments: 321,
+                        author: "মুহাম্মদ আলী",
+                        verified: true,
+                        breaking: false
+                    },
+                    {
+                        id: 6,
+                        title: "তুরস্কের মানবিক সাহায্য: গাজার জন্য ১০০ টন ওষুধ ও খাদ্য",
+                        excerpt: "তুরস্ক গাজায় মানবিক সাহায্য হিসেবে ১০০ টন ওষুধ, খাদ্য ও জরুরি সরঞ্জাম পাঠিয়েছে। তুর্কি রেড ক্রিসেন্টের মাধ্যমে এই সাহায্য বিতরণ করা হবে।",
+                        category: "international",
+                        image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                        tags: ["তুরস্ক", "মানবিক সাহায্য", "রেড ক্রিসেন্ট"],
+                        date: "২০২৩-১০-২৩",
+                        time: "৯:৪৫ AM",
+                        views: 8765,
+                        comments: 145,
+                        author: "আয়েশা খান",
+                        verified: true,
+                        breaking: false
+                    }
+                ];
+            }
+            
+            getDemoLiveUpdates() {
+                return [
+                    { time: "১৪:৩০", text: "গাজা: ইসরাইলি বিমান হামলায় ১২ জন নিহত" },
+                    { time: "১৪:১৫", text: "জাতিসংঘ নিরাপত্তা পরিষদে জরুরি বৈঠক আহ্বান" },
+                    { time: "১৩:৪৫", text: "মিসরের মাধ্যমে নতুন যুদ্ধবিরতি প্রস্তাব" },
+                    { time: "১৩:২০", text: "তুরস্কের রাষ্ট্রপতি ফিলিস্তিন বিষয়ে বিবৃতি দিচ্ছেন" },
+                    { time: "১২:৫৫", text: "গাজায় ইন্টারনেট সংযোগ আংশিক ফিরেছে" },
+                    { time: "১২:৩০", text: "পশ্চিম তীরে বিক্ষোভ, ইসরাইলি সৈন্য মোতায়েন" },
+                    { time: "১১:৪৫", text: "কাতারের মধ্যস্থতায় বন্দি বিনিময় আলোচনা" },
+                    { time: "১১:২০", text: "ইউরোপীয় ইউনিয়নের নতুন অর্থনৈতিক প্রস্তাব" }
+                ];
+            }
+            
+            saveNews() {
+                localStorage.setItem('palestine_news', JSON.stringify(this.news));
+            }
+            
+            saveLiveUpdates() {
+                localStorage.setItem('palestine_live', JSON.stringify(this.liveUpdates));
+            }
+            
+            setupEventListeners() {
+                // Auth buttons
+                document.getElementById('loginBtn').addEventListener('click', () => this.openAuthModal('login'));
+                document.getElementById('signupBtn').addEventListener('click', () => this.openAuthModal('signup'));
+                document.getElementById('createNewsBtn').addEventListener('click', () => this.openCreateNewsModal());
+                
+                // Modal close buttons
+                document.getElementById('closeAuthModal').addEventListener('click', () => this.closeAuthModal());
+                document.getElementById('closeNewsModal').addEventListener('click', () => this.closeCreateNewsModal());
+                
+                // Form submissions
+                document.getElementById('loginFormData').addEventListener('submit', (e) => this.handleLogin(e));
+                document.getElementById('signupFormData').addEventListener('submit', (e) => this.handleSignup(e));
+                document.getElementById('newsForm').addEventListener('submit', (e) => this.handleNewsSubmit(e));
+                
+                // Tab switching
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => this.switchTab(e.target));
+                });
+                
+                // Category filtering
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => this.filterNews(e.target));
+                });
+                
+                // Search functionality
+                document.querySelector('.search-box input').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.searchNews(e.target.value);
+                });
+                
+                // Editor buttons
+                document.querySelectorAll('.editor-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => this.editorCommand(e.target));
+                });
+                
+                // Close modals on outside click
+                window.addEventListener('click', (e) => {
+                    if (e.target.id === 'authModal') this.closeAuthModal();
+                    if (e.target.id === 'createNewsModal') this.closeCreateNewsModal();
+                });
+            }
+            
+            openAuthModal(tab = 'login') {
+                document.getElementById('authModal').classList.add('active');
+                this.switchTab(document.querySelector(`[data-tab="${tab}"]`));
+            }
+            
+            closeAuthModal() {
+                document.getElementById('authModal').classList.remove('active');
+            }
+            
+            openCreateNewsModal() {
+                if (!this.currentUser) {
+                    this.showNotification('সংবাদ প্রকাশ করতে লগইন করুন', 'error');
+                    this.openAuthModal('login');
+                    return;
+                }
+                document.getElementById('createNewsModal').classList.add('active');
+            }
+            
+            closeCreateNewsModal() {
+                document.getElementById('createNewsModal').classList.remove('active');
+            }
+            
+            switchTab(button) {
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.form-content').forEach(form => form.classList.remove('active'));
+                
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab + 'Form').classList.add('active');
+            }
+            
+            async handleLogin(e) {
+                e.preventDefault();
+                this.showLoading();
+                
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                const email = e.target.querySelector('input[type="email"]').value;
+                const password = e.target.querySelector('input[type="password"]').value;
+                
+                // Demo login - in real app, check against database
+                if (email && password) {
+                    this.currentUser = {
+                        id: 1,
+                        name: "আহমেদ রহমান",
+                        email: email,
+                        type: "journalist",
+                        joinDate: "২০২৩-১০-১৫"
+                    };
+                    localStorage.setItem('palestine_user', JSON.stringify(this.currentUser));
+                    this.closeAuthModal();
+                    this.checkAuth();
+                    this.showNotification('সফলভাবে লগইন করা হয়েছে!', 'success');
+                } else {
+                    this.showNotification('ইমেইল ও পাসওয়ার্ড প্রয়োজন', 'error');
+                }
+                
+                this.hideLoading();
+            }
+            
+            async handleSignup(e) {
+                e.preventDefault();
+                this.showLoading();
+                
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                const formData = new FormData(e.target);
+                const user = {
+                    id: Date.now(),
+                    name: formData.get('name') || 'নতুন ব্যবহারকারী',
+                    email: formData.get('email'),
+                    type: formData.get('type') || 'reader',
+                    joinDate: new Date().toLocaleDateString('bn-BD')
+                };
+                
+                this.currentUser = user;
+                localStorage.setItem('palestine_user', JSON.stringify(user));
+                this.closeAuthModal();
+                this.checkAuth();
+                this.showNotification('অ্যাকাউন্ট তৈরি সফল হয়েছে!', 'success');
+                
+                this.hideLoading();
+            }
+            
+            async handleNewsSubmit(e) {
+                e.preventDefault();
+                this.showLoading();
+                
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                const formData = new FormData(e.target);
+                const now = new Date();
+                
+                const newNews = {
+                    id: Date.now(),
+                    title: document.getElementById('newsTitle').value,
+                    excerpt: document.getElementById('newsContent').innerText.substring(0, 150) + '...',
+                    content: document.getElementById('newsContent').innerHTML,
+                    category: document.getElementById('newsCategory').value,
+                    image: document.getElementById('newsImage').value.split(',')[0],
+                    images: document.getElementById('newsImage').value.split(',').map(img => img.trim()),
+                    tags: document.getElementById('newsTags').value.split(',').map(tag => tag.trim()),
+                    source: document.getElementById('newsSource').value,
+                    date: now.toLocaleDateString('bn-BD'),
+                    time: now.toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }),
+                    views: 0,
+                    comments: 0,
+                    author: this.currentUser.name,
+                    verified: document.getElementById('newsVerified').checked,
+                    breaking: document.getElementById('newsBreaking').checked
+                };
+                
+                this.news.unshift(newNews);
+                this.saveNews();
+                
+                // Reset form
+                e.target.reset();
+                document.getElementById('newsContent').innerHTML = '';
+                
+                this.closeCreateNewsModal();
+                this.renderNews();
+                this.showNotification('সংবাদ সফলভাবে প্রকাশিত হয়েছে!', 'success');
+                
+                // Update breaking news if marked
+                if (newNews.breaking) {
+                    document.getElementById('breakingNewsText').textContent = newNews.title;
+                }
+                
+                this.hideLoading();
+            }
+            
+            renderNews() {
+                const container = document.getElementById('newsContainer');
+                if (!container) return;
+                
+                container.innerHTML = '';
+                
+                this.news.forEach(item => {
+                    const newsCard = document.createElement('article');
+                    newsCard.className = 'news-card';
+                    newsCard.innerHTML = `
+                        <img src="${item.image}" alt="${item.title}" class="news-image">
+                        <div class="news-content">
+                            <div class="news-tag">${this.getCategoryName(item.category)}</div>
+                            <h3 class="news-title">${item.title}</h3>
+                            <p class="news-excerpt">${item.excerpt}</p>
+                            <div class="news-meta">
+                                <span><i class="far fa-clock"></i> ${item.time}</span>
+                                <div class="read-time">
+                                    <i class="far fa-eye"></i> ${this.formatNumber(item.views)}
+                                    <i class="far fa-comment" style="margin-left: 10px;"></i> ${item.comments}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    newsCard.addEventListener('click', () => this.viewNews(item.id));
+                    container.appendChild(newsCard);
+                });
+            }
+            
+            renderLiveUpdates() {
+                const container = document.getElementById('liveFeed');
+                if (!container) return;
+                
+                container.innerHTML = '';
+                
+                this.liveUpdates.forEach(update => {
+                    const liveItem = document.createElement('div');
+                    liveItem.className = 'live-item';
+                    liveItem.innerHTML = `
+                        <div class="live-time">${update.time}</div>
+                        <div class="live-text">${update.text}</div>
+                    `;
+                    container.appendChild(liveItem);
+                });
+            }
+            
+            getCategoryName(category) {
+                const categories = {
+                    'latest': 'সর্বশেষ',
+                    'gaza': 'গাজা সংকট',
+                    'west-bank': 'পশ্চিম তীর',
+                    'international': 'আন্তর্জাতিক',
+                    'analysis': 'বিশ্লেষণ',
+                    'humanitarian': 'মানবিক'
+                };
+                return categories[category] || 'সাধারণ';
+            }
+            
+            formatNumber(num) {
+                if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+                if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+                return num;
+            }
+            
+            checkAuth() {
+                const userWidget = document.getElementById('userWidget');
+                const createBtn = document.getElementById('createNewsBtn');
+                
+                if (this.currentUser) {
+                    userWidget.style.display = 'block';
+                    document.getElementById('userProfileInfo').innerHTML = `
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="background-color: var(--bbc-red); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold;">
+                                ${this.currentUser.name.charAt(0)}
+                            </div>
+                            <h4 style="margin-bottom: 5px;">${this.currentUser.name}</h4>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${this.currentUser.email}</p>
+                            <button id="logoutBtn" class="auth-btn" style="width: 100%;">লগআউট</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('logoutBtn').addEventListener('click', () => this.handleLogout());
+                    createBtn.textContent = 'সংবাদ প্রকাশ';
+                } else {
+                    userWidget.style.display = 'none';
+                    createBtn.textContent = 'লগইন করুন';
+                }
+            }
+            
+            handleLogout() {
+                this.currentUser = null;
+                localStorage.removeItem('palestine_user');
+                this.checkAuth();
+                this.showNotification('লগআউট সফল হয়েছে', 'info');
+            }
+            
+            filterNews(button) {
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const category = button.textContent.toLowerCase();
+                // Filter logic would go here
+                this.showNotification(`${button.textContent} সংবাদ ফিল্টার করা হয়েছে`, 'info');
+            }
+            
+            searchNews(query) {
+                if (query.trim()) {
+                    this.showNotification(`"${query}" এর জন্য ফলাফল খুঁজছি...`, 'info');
+                    // Search logic would go here
+                }
+            }
+            
+            viewNews(id) {
+                const news = this.news.find(item => item.id === id);
+                if (news) {
+                    // Increment views
+                    news.views = (news.views || 0) + 1;
+                    this.saveNews();
+                    
+                    // Show news detail (would normally navigate to detail page)
+                    this.showNotification(`"${news.title.substring(0, 50)}..." পড়ছেন`, 'info');
+                    
+                    // In a real app, you would navigate to a detail page
+                    // For demo, we'll show an alert with more info
+                    const detailWindow = window.open('', '_blank');
+                    detailWindow.document.write(`
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>${news.title}</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+                                .news-detail { margin-top: 20px; }
+                                .news-image { width: 100%; height: auto; margin: 20px 0; }
+                                .news-content { line-height: 1.8; }
+                                .news-meta { color: #666; margin: 20px 0; }
+                            </style>
+                        </head>
+                        <body>
+                            <h1>${news.title}</h1>
+                            <div class="news-meta">
+                                <strong>লেখক:</strong> ${news.author} | 
+                                <strong>তারিখ:</strong> ${news.date} ${news.time} |
+                                <strong>দেখেছেন:</strong> ${news.views} বার
+                            </div>
+                            ${news.images && news.images[0] ? `<img src="${news.images[0]}" alt="${news.title}" class="news-image">` : ''}
+                            <div class="news-content">${news.content || news.excerpt}</div>
+                            <div style="margin-top: 30px;">
+                                <strong>ট্যাগ:</strong> ${news.tags ? news.tags.join(', ') : ''}
+                            </div>
+                            <button onclick="window.print()" style="margin-top: 20px; padding: 10px 20px; background: #BB1919; color: white; border: none; cursor: pointer;">
+                                প্রিন্ট করুন
+                            </button>
+                        </body>
+                        </html>
+                    `);
+                }
+            }
+            
+            editorCommand(button) {
+                const command = button.dataset.command;
+                document.getElementById('newsContent').focus();
+                
+                if (command === 'createLink') {
+                    const url = prompt('লিংক দিন:');
+                    if (url) document.execCommand(command, false, url);
+                } else {
+                    document.execCommand(command, false, null);
+                }
+            }
+            
+            showNotification(message, type = 'info') {
+                const notification = document.getElementById('notification');
+                const text = document.getElementById('notificationText');
+                
+                // Set color based on type
+                const colors = {
+                    success: '#28a745',
+                    error: '#dc3545',
+                    info: '#17a2b8'
+                };
+                
+                notification.style.backgroundColor = colors[type] || colors.info;
+                text.textContent = message;
+                notification.style.display = 'block';
+                
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 3000);
+            }
+            
+            showLoading() {
+                document.getElementById('loadingModal').classList.add('active');
+            }
+            
+            hideLoading() {
+                document.getElementById('loadingModal').classList.remove('active');
+            }
+            
+            // Additional methods for live updates
+            addLiveUpdate(text) {
+                const now = new Date();
+                const time = now.toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' });
+                
+                this.liveUpdates.unshift({ time, text });
+                if (this.liveUpdates.length > 10) {
+                    this.liveUpdates = this.liveUpdates.slice(0, 10);
+                }
+                
+                this.saveLiveUpdates();
+                this.renderLiveUpdates();
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            window.newsApp = new PalestineNews();
+            
+            // Demo: Add a live update every 30 seconds
+            setInterval(() => {
+                const updates = [
+                    "নতুন প্রতিবেদন: গাজার স্বাস্থ্য সংকট গভীরতর",
+                    "আন্তর্জাতিক সম্প্রদায়ের নতুন বিবৃতি প্রকাশিত",
+                    "মানবাধিকার সংস্থার প্রতিবেদন প্রকাশ",
+                    "স্থানীয় প্রতিবাদ সমাবেশের আয়োজন"
+                ];
+                const randomUpdate = updates[Math.floor(Math.random() * updates.length)];
+                window.newsApp.addLiveUpdate(randomUpdate);
+            }, 30000);
+        });
+
+        // GitHub Pages Deployment Guide
+        /*
+        GitHub-এ ডেপ্লয় করার ধাপ:
+        
+        ১. GitHub রিপোজিটরি তৈরি করুন:
+           - https://github.com নতুন রিপোজিটরি
+           - নাম: palestine-news-portal
+           - Public সিলেক্ট করুন
+           - README.md যোগ করুন
+        
+        ২. ফাইল আপলোড:
+           - এই index.html ফাইলটি আপলোড করুন
+           - একটি CNAME ফাইল তৈরি করুন (যদি কাস্টম ডোমেইন থাকে)
+        
+        ৩. GitHub Pages সেটআপ:
+           - Settings > Pages
+           - Source: Deploy from a branch
+           - Branch: main, / (root)
+           - Save
+        
+        ৪. কাস্টম ডোমেইন (ঐচ্ছিক):
+           - Custom domain যোগ করুন
+           - DNS সেটিংস:
+             A রেকর্ড: 185.199.108.153
+             A রেকর্ড: 185.199.109.153
+             A রেকর্ড: 185.199.110.153
+             A রেকর্ড: 185.199.111.153
+        
+        ৫. উন্নত ফিচার যোগ:
+           - manifest.json (PWA)
+           - service-worker.js (অফলাইন কাজ)
+           - robots.txt (সার্চ ইঞ্জিন)
+           - sitemap.xml (সার্চ ইঞ্জিন)
+        
+        ৬. ডেটা ব্যাকআপ:
+           - স্বয়ংক্রিয় ব্যাকআপ সিস্টেম
+           - JSON এক্সপোর্ট/ইমপোর্ট
+        
+        সম্পূর্ণ সাইট লাইভ হবে: https://username.github.io/palestine-news-portal
+        */
+    </script>
+</body>
+</html>
